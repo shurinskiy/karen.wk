@@ -39,7 +39,9 @@ $breakpoints: (
 	// "../../node_modules/animate-scss/_zooming-entrances/zooming-entrances.scss";
 
 
-// @include font-face("Roboto-Black", "RBBL");
+@include font-face("BabySchool", "BS");
+@include font-face("BabySchoolShadow", "BSSH");
+@include font-face("Poppins-Regular", "PP");
 // @import "../../node_modules/swiper/swiper";
 
 // Import BEM blocks scss
@@ -49,8 +51,8 @@ body, html {
 	box-sizing: border-box;
 	font-size: #{$basesize}px;
 	line-height: 1.2;
-	font-family: sans-serif;
-	background-color: #fafafa;
+	font-family: "PP", sans-serif;
+	background-color: #FFFEE4;
 	min-height: 100vh;
 	display: flex;
 	flex-flow: column nowrap;
