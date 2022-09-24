@@ -1,5 +1,7 @@
 .feed {
 	$self: &;
+	background: url('#{$images-path}feed-bg-top.png') left 20px top -120px / auto no-repeat, url('#{$images-path}feed-bg-bottom.png') right -320px bottom 120px / auto no-repeat, linear-gradient(to top, #fdd311 0%, #fffee4 100%);
+	padding-bottom: 45px;
 
 	&__inner {
 
@@ -10,27 +12,87 @@
 	}
 
 	&__cards {
-
+		padding-top: 135px;
+		display: flex;
+		justify-content: space-between;
+		max-width: 1095px;
+		margin: 0 auto 35px;
 	}
 
 	&__card {
+		width: 33.3%;
+		position: relative;
 
+		&:nth-child(1) {
+			transform: rotate(-10deg) translate(45px, 10px);
+			z-index: 3;
+		}
+		
+		&:nth-child(2) {
+			z-index: 2;
+		}
+		
+		&:nth-child(3) {
+			transform: rotate(10deg) translate(-45px, 10px);
+			z-index: 1;
+		}
 	}
 
 	&__counter {
+		max-width: 250px;
+		margin: 0 auto 30px;
+		font-family: "BS", sans-serif;
+		font-size: 20px;
+		color: #000;
+		text-transform: uppercase;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
+		span:first-child {
+			margin-right: 20px;
+		}
+
+		span:last-child {
+			color: #F83821;
+			font-size: 36px;
+		}
 	}
 
 	&__text {
-
+		max-width: 840px;
+		text-align: center;
+		margin: 0 auto 45px;
+		font-size: 14px;
+		line-height: 1.5;
 	}
 
 	&__buttons {
-
+		max-width: 500px;
+		margin: 0 auto 85px;
+		display: flex;
+		justify-content: center;
 	}
 
 	&__button {
-
+		box-sizing: border-box;
+		height: 67px;
+		padding: 14px 10px 10px 10px;
+		width: 100%;
+		max-width: 215px;
+		margin: 0 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #000;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-family: "BS", sans-serif;
+		font-size: 18px;
+		line-height: 1.0;
+		background-color: #FFFEE4;
+		border-radius: 100px;
+		border: 2px solid black;
+		border-bottom-width: 7px;
 	}
-
 }

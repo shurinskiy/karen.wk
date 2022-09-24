@@ -1,28 +1,47 @@
 .gallery {
 	$self: &;
+	background: url('#{$images-path}gallery-bg-top.png') left top / auto no-repeat, url('#{$images-path}gallery-bg-bottom.png') right bottom / auto no-repeat, linear-gradient(#FFDBD6 0%, #FFDBD6 100%);
+	padding-bottom: 45px;
+	// background-color: #FFDBD6;
 
 	&__inner {
-
+		padding-top: 70px;
+		padding-bottom: 90px;
 	}
 
 	&__top {
-
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		margin-bottom: 75px;
 	}
 
 	&__top-title {
-
+		grid-column: span 3;
 	}
-
+	
 	&__top-text {
-
+		grid-column: 5 / span 6;
+		max-width: 620px;
+		line-height: 1.5;
+		margin: 0 auto;
 	}
 
 	&__cards {
-
+		max-width: 840px;
+		margin: 0 auto;
+		display: grid;
+		grid-gap: 40px;
+		grid-template-columns: repeat(2, 1fr);
 	}
 
 	&__card {
+		grid-column: span 1;
 
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
-
 }

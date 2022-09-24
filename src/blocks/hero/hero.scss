@@ -1,8 +1,139 @@
 .hero {
 	$self: &;
+	height: 720px;
+	overflow: hidden;
+	margin-top: -80px;
+	background: url('#{$images-path}hero-road.webp') center bottom / auto no-repeat, url('#{$images-path}hero-clouds.webp') center top / auto no-repeat, url('#{$images-path}hero-landscape.png') center / auto no-repeat;
 
 	&__inner {
-
+		position: relative;
+		height: 100%;
 	}
 
+	&__board {
+		position: absolute;
+		top: 31%;
+		right: -6px;
+		color: #fff;
+		font-family: "BS", sans-serif;
+		font-style: italic;
+		max-width: 390px;
+	}
+	
+	&__board-main {
+		font-size: 52px;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	
+	&__board-bottom {
+		font-size: 32px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__board-part {
+		&:first-child {
+			margin-right: 30px;
+		}
+	}
+
+	&__panel {
+		position: absolute;
+		left: 50%;
+		bottom: 35px;
+		transform: translateX(-50%);
+		width: calc(100% - 40px);
+		height: 100px;
+		background-color: #000;
+		border-radius: 100px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&::before {
+			display: block;
+			content: '';
+			width: 240px;
+			height: 210px;
+			align-self: flex-end;
+			margin-left: 50px;
+			background: url('#{$images-path}hero-chiwawa.png') left bottom / auto no-repeat transparent;
+		}
+	}
+
+	&__panel-text {
+		font-family: "BS", sans-serif;
+		font-size: 24px;
+		color: #fff;
+		font-style: italic;
+
+		span {
+			color: #F83821;
+		}
+	}
+
+	&__panel-button {
+		box-sizing: border-box;
+		background-color: #F83821;
+		height: 64px;
+		border-radius: 100px;
+		margin-right: 16px;
+		padding: 10px 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: "BS", sans-serif;
+		color: #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 18px;
+	}
+
+	&__plane {
+		width: 270px;
+		height: 185px;
+		background: url('#{$images-path}hero-plane.png') center / contain no-repeat transparent;
+		position: absolute;
+		top: 15px;
+		left: 55px;
+	}
+
+	&__bus {
+		width: 680px;
+		height: 460px;
+		background: url('#{$images-path}hero-bus.png') center / contain no-repeat transparent;
+		position: absolute;
+		bottom: -50px;
+		left: calc(50% - 30px);
+		transform: translateX(-50%);
+	}
+
+	&__bubbles {
+		width: 700px;
+		height: 260px;
+		background: url('#{$images-path}hero-bubbles.png') center / contain no-repeat transparent;
+		position: absolute;
+		top: 90px;
+		left: calc(50% - 80px);
+		transform: translateX(-50%);
+	}
+
+	&__bird {
+		width: 140px;
+		height: 120px;
+		background: url('#{$images-path}hero-bird.png') center / contain no-repeat transparent;
+		position: absolute;
+		top: 80px;
+		right: -10px
+	}
+
+	&__bird-bubble {
+		width: 185px;
+		height: 85px;
+		background: url('#{$images-path}hero-bird-bubble.png') center / contain no-repeat transparent;
+		position: absolute;
+		top: 10px;
+		right: -20px
+	}
 }

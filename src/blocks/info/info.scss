@@ -2,23 +2,33 @@
 	$self: &;
 
 	&__inner {
-
+		padding-bottom: 100px;
 	}
 
 	&__items {
-
+		display: grid;
+		grid-gap: 40px;
+		grid-template-columns: repeat(12, 1fr);
 	}
 
 	&__item {
-
+		grid-column: 4 / -2;
+		box-sizing: border-box;
+		padding: 35px 70px 35px;
+		border-radius: 30px;
+		background-color: #FFFEE4;
+		border: 2px solid black;
+		border-bottom-width: 7px;
 	}
 
 	&__subtitle {
-
+		font-family: "BS", sans-serif;
+		text-transform: uppercase;
+		font-size: 28px;
+		margin-bottom: 20px;
 	}
 
 	&__text {
-
+		line-height: 1.5;
 	}
-
 }

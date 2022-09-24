@@ -1,8 +1,12 @@
 .footer {
 	$self: &;
+	background-color: #000;
 
 	&__inner {
-
+		padding: 60px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	&__logo {
@@ -10,30 +14,53 @@
 	}
 
 	&__socials {
-
+		display: flex;
+		flex-grow: 1;
+		max-width: 270px;
+		justify-content: space-between;
 	}
 
 	&__social {
+		display: block;
+		height: 29px;
+		width: 29px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		flex-shrink: 0;
+		margin: 0 10px;
 
 		&_tgm {
-			
+			background-image: url('#{$images-path}social-telegram.svg');
 		}
-
+		
 		&_dsc {
-			
+			background-image: url('#{$images-path}social-discord.svg');
 		}
-
+		
 		&_twt {
-			
+			background-image: url('#{$images-path}social-twitter.svg');
 		}
-
+		
 		&_git {
-			
+			background-image: url('#{$images-path}social-github.svg');
 		}
 	}
 
 	&__email {
+		font-size: 14px;
+		color: #FFFEE4;
+		display: flex;
+		align-items: center;
 
+		&::before {
+			display: block;
+			content: '';
+			width: 21px;
+			height: 17px;
+			background: url('#{$images-path}footer-mail.svg') center / auto no-repeat transparent;
+			margin-right: 15px;
+		}
 	}
 
 	&__side {
@@ -41,11 +68,17 @@
 	}
 
 	&__side-img {
-
+		text-align: right;
+		margin-bottom: 10px;
 	}
 
 	&__side-text {
+		color: #4C4C44;
+		font-size: 14px;
 
+		a {
+			text-decoration: none;
+			color: #354C01;
+		}
 	}
-
 }

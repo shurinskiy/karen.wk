@@ -1,8 +1,14 @@
 .menu {
 	$self: &;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: "BS", sans-serif;
+	font-size: 20px;
 
 	&__item {
-
+		text-decoration: none;
+		margin: 0 10px;
+		color: #000;
 	}
-
 }
