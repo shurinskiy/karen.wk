@@ -1,14 +1,72 @@
 .menu {
 	$self: &;
+	box-sizing: border-box;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	font-family: "BS", sans-serif;
 	font-size: 20px;
+	width: 100%;
+	max-width: 365px;
+
+	@include media('<=md') {
+		display: none;
+		background-color: #fff;
+		border-radius: 20px;
+		border: 2px solid black;
+		border-bottom-width: 7px;
+		flex-flow: column nowrap;
+		align-items: stretch;
+		padding: 40px 20px 30px;
+		position: absolute;
+		z-index: 10;
+		top: 20px;
+		right: 20px;
+		width: calc(100% - 40px);
+		max-width: 250px;
+
+		&.opened {
+			display: flex;
+		}
+	}
+
+	&__close {
+		@extend %reset-button;
+		min-height: 24px;
+		width: 24px;
+		background: url('#{$images-path}menu-close.svg') center / 18px 18px no-repeat transparent;
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		display: none;
+		
+		@include media('<=md') {
+			display: block;
+		}
+	}
+
+	&__toggle {
+		@extend %reset-button;
+		flex-shrink: 0;
+		min-height: 24px;
+		width: 30px;
+		background: url('#{$images-path}menu-toggle.svg') center / 25px 20px no-repeat transparent;
+		margin-left: auto;
+		display: none;
+		
+		@include media('<=md') {
+			display: block;
+		}
+	}
 
 	&__item {
 		text-decoration: none;
 		margin: 0 10px;
 		color: #000;
+		
+		@include media('<=md') {
+			margin: 10px 0;
+			text-align: center;
+		}
 	}
 }

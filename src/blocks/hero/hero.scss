@@ -3,7 +3,7 @@
 	height: 720px;
 	overflow: hidden;
 	margin-top: -80px;
-	background: url('#{$images-path}hero-road.webp') center bottom / auto no-repeat, url('#{$images-path}hero-clouds.webp') center top / auto no-repeat, url('#{$images-path}hero-landscape.png') center / auto no-repeat;
+	background: url('#{$images-path}hero-road.webp') bottom / auto no-repeat, url('#{$images-path}hero-clouds.webp') center top / auto no-repeat, url('#{$images-path}hero-landscape.png') center / auto no-repeat;
 
 	&__inner {
 		position: relative;
@@ -39,25 +39,28 @@
 	}
 
 	&__panel {
+		box-sizing: border-box;
 		position: absolute;
+		padding: 16px;
 		left: 50%;
 		bottom: 35px;
 		transform: translateX(-50%);
 		width: calc(100% - 40px);
-		height: 100px;
 		background-color: #000;
 		border-radius: 100px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-
+		
 		&::before {
 			display: block;
 			content: '';
+			position: absolute;
+			left: 50px;
+			bottom: 0;
 			width: 240px;
 			height: 210px;
 			align-self: flex-end;
-			margin-left: 50px;
 			background: url('#{$images-path}hero-chiwawa.png') left bottom / auto no-repeat transparent;
 		}
 	}
@@ -67,6 +70,7 @@
 		font-size: 24px;
 		color: #fff;
 		font-style: italic;
+		margin-left: 330px;
 
 		span {
 			color: #F83821;
@@ -78,8 +82,7 @@
 		background-color: #F83821;
 		height: 64px;
 		border-radius: 100px;
-		margin-right: 16px;
-		padding: 10px 25px;
+		padding: 14px 25px 10px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -88,6 +91,7 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		font-size: 18px;
+		white-space: nowrap;
 	}
 
 	&__plane {
@@ -134,6 +138,10 @@
 		background: url('#{$images-path}hero-bird-bubble.png') center / contain no-repeat transparent;
 		position: absolute;
 		top: 10px;
-		right: -20px
+		right: -20px;
+
+		@include media('<=md') {
+			display: none;
+		}
 	}
 }

@@ -50,6 +50,23 @@
 		background-color: #FFFEE4;
 		border: 2px solid black;
 		border-bottom-width: 7px;
+		position: relative;
+		z-index: 1;
+		
+		@keyframes fadein {
+			0% {
+				opacity: 0;
+				transform: scale(0.95);
+			}
+			50% {
+				z-index: 2;
+			}
+			100% {
+				opacity: 1;
+				z-index: 2;
+				transform: scale(1.0);
+			}
+		}
 		
 		&:nth-child(1) {
 			grid-column: 1 / span 5;
@@ -71,8 +88,9 @@
 			margin-top: -191px;
 		}
 
-		&:not(:last-child):hover {
-			z-index: 10;
+		&.active {
+			animation: fadein 0.2s linear;
+			animation-fill-mode: forwards;
 		}
 	}
 

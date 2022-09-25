@@ -342,7 +342,7 @@ import { roughAccordion } from "../../js/lib";
 document.querySelectorAll('.accordeon').forEach((accordeon) => {
 	roughAccordion(accordeon.querySelectorAll('.accordeon__head'), { 
 		events: 'click, mouseenter',
-		cls: 'active,
+		cls: 'active',
 		toggle: false
 	});
 });

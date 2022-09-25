@@ -3,21 +3,43 @@
 	background-color: #000;
 
 	&__inner {
-		padding: 60px 0;
+		padding-top: 60px;
+		padding-bottom: 60px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		@include media('<=md') {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		
+		@include media('<=xxs') {
+			display: block;
+		}
 	}
 
 	&__logo {
-
+		@include media('<=xxs') {
+			display: block;
+			text-align: center;
+		}
 	}
 
 	&__socials {
 		display: flex;
 		flex-grow: 1;
-		max-width: 270px;
+		max-width: 280px;
 		justify-content: space-between;
+		
+		@include media('<=md') {
+			justify-self: end;
+		}
+		
+		@include media('<=xxs') {
+			padding-top: 50px;
+			margin: 0 auto;
+		}
 	}
 
 	&__social {
@@ -28,23 +50,15 @@
 		background-position: center;
 		background-size: contain;
 		flex-shrink: 0;
-		margin: 0 10px;
+		margin: 0 20px;
 
-		&_tgm {
-			background-image: url('#{$images-path}social-telegram.svg');
-		}
+		&_tgm { background-image: url('#{$images-path}social-telegram.svg'); }
 		
-		&_dsc {
-			background-image: url('#{$images-path}social-discord.svg');
-		}
+		&_dsc { background-image: url('#{$images-path}social-discord.svg'); }
 		
-		&_twt {
-			background-image: url('#{$images-path}social-twitter.svg');
-		}
+		&_twt { background-image: url('#{$images-path}social-twitter.svg'); }
 		
-		&_git {
-			background-image: url('#{$images-path}social-github.svg');
-		}
+		&_git { background-image: url('#{$images-path}social-github.svg'); }
 	}
 
 	&__email {
@@ -52,6 +66,17 @@
 		color: #FFFEE4;
 		display: flex;
 		align-items: center;
+
+		@include media('<=md') {
+			padding-top: 50px;
+			margin-bottom: 50px;
+			grid-column: span 2;
+			justify-self: center;
+		}
+		
+		@include media('<=xxs') {
+			justify-content: center;
+		}
 
 		&::before {
 			display: block;
@@ -64,17 +89,27 @@
 	}
 
 	&__side {
-
+		@include media('<=md') {
+			grid-column: span 2;
+		}
 	}
 
 	&__side-img {
 		text-align: right;
 		margin-bottom: 10px;
+		
+		@include media('<=md') {
+			text-align: center;
+		}
 	}
 
 	&__side-text {
 		color: #4C4C44;
 		font-size: 14px;
+		
+		@include media('<=md') {
+			text-align: center;
+		}
 
 		a {
 			text-decoration: none;
