@@ -1,11 +1,17 @@
 .partners {
 	$self: &;
+	overflow: hidden;
+	
+	&__inner {
+		position: relative;
+		min-height: 760px;
+	}
 
 	&__title {
 		display: flex;
 		flex-wrap: wrap;
 		max-width: 840px;
-		margin: 0 auto 50px;
+		margin: 0 auto 100px;
 
 		span:nth-child(2) {
 			margin: 0 30px;
@@ -18,13 +24,28 @@
 	}
 
 	&__type {
+		position: absolute;
+		top: auto;
+		left: 50%;
+		height: 90px;
+		border: 2px solid black;
+		width: 2000px;
+		z-index: 1;
+		background-position: center;
+		background-size: auto;
+		background-repeat: repeat-x;
+		transform-origin: 0;
 
 		&_1 {
-			
+			background-color: #FDD30F;
+			background-image: url('#{$images-path}partners-type-1.png');
+			transform: rotate(16deg) translateX(-50%);
 		}
-
+		
 		&_2 {
-			
+			background-color: #F83821;
+			background-image: url('#{$images-path}partners-type-2.png');
+			transform: rotate(-6deg) translateX(-50%);
 		}
 	}
 }

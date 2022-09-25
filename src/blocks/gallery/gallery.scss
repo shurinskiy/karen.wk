@@ -4,9 +4,55 @@
 	padding-bottom: 45px;
 	// background-color: #FFDBD6;
 
+	&__flyer-1 {
+		background: url('#{$images-path}flyer-9.png') center / contain no-repeat transparent;
+		height: 220px;
+		width: 215px;
+		position: absolute;
+		top: 90px;
+		right: -15px;
+	}
+
+	&__flyer-2 {
+		background: url('#{$images-path}flyer-10.png') center / contain no-repeat transparent;
+		height: 130px;
+		width: 120px;
+		position: absolute;
+		top: 635px;
+		left: 70px;
+	}
+
+	&__flyer-3 {
+		background: url('#{$images-path}flyer-11.png') center / contain no-repeat transparent;
+		height: 115px;
+		width: 125px;
+		position: absolute;
+		top: 795px;
+		right: -95px;
+	}
+
+	&__flyer-4 {
+		background: url('#{$images-path}flyer-12.png') center / contain no-repeat transparent;
+		width: 130px;
+		height: 60px;
+		position: absolute;
+		bottom: 575px;
+		left: -85px;
+	}
+
+	&__flyer-5 {
+		background: url('#{$images-path}flyer-13.png') center / contain no-repeat transparent;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		bottom: 340px;
+		right: 60px;
+	}
+
 	&__inner {
-		padding-top: 70px;
+		position: relative;
 		padding-bottom: 90px;
+		padding-top: 70px;
 	}
 
 	&__top {
