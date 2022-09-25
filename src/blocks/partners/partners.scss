@@ -46,6 +46,7 @@
 			background-color: #F83821;
 			background-image: url('#{$images-path}partners-type-2.png');
 			transform: rotate(-6deg) translateX(-50%);
+			box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.3);
 		}
 	}
 }
