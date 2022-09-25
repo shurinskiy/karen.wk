@@ -2,7 +2,7 @@
 	$self: &;
 	background: url('#{$images-path}gallery-bg-top.png') left top / auto no-repeat, url('#{$images-path}gallery-bg-bottom.png') right bottom / auto no-repeat, linear-gradient(#FFDBD6 0%, #FFDBD6 100%);
 	padding-bottom: 45px;
-	// background-color: #FFDBD6;
+	overflow: hidden;
 
 	&__flyer-1 {
 		background: url('#{$images-path}flyer-9.png') center / contain no-repeat transparent;
@@ -70,6 +70,10 @@
 		max-width: 620px;
 		line-height: 1.5;
 		margin: 0 auto;
+		
+		@include media('<=xlg') {
+			grid-column: 6 / span 6;
+		}
 	}
 
 	&__cards {

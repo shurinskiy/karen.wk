@@ -2,6 +2,7 @@
 	$self: &;
 	background: url('#{$images-path}feed-bg-top.png') left 20px top -120px / auto no-repeat, url('#{$images-path}feed-bg-bottom.png') right -320px bottom 120px / auto no-repeat, linear-gradient(to top, #fdd311 0%, #fffee4 100%);
 	padding-bottom: 45px;
+	overflow: hidden;
 
 	&__flyer-1 {
 		background: url('#{$images-path}flyer-1.png') center / contain no-repeat transparent;
