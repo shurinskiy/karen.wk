@@ -4,4 +4,16 @@
 	font-family: "BS", sans-serif;
 	font-size: 80px;
 	text-transform: uppercase;
+	
+	@include media('<=lg') {
+		font-size: 70px;
+	};
+	
+	@include media('<=sm') {
+		font-size: 60px;
+	};
+	
+	@include media('<=xxs') {
+		font-size: 45px;
+	};
 }

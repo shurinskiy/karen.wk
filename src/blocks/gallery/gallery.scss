@@ -1,8 +1,17 @@
 .gallery {
 	$self: &;
-	background: url('#{$images-path}gallery-bg-top.png') left top / auto no-repeat, url('#{$images-path}gallery-bg-bottom.png') right bottom / auto no-repeat, linear-gradient(#FFDBD6 0%, #FFDBD6 100%);
+	background: url('#{$images-path}gallery-bg-top.png') left top / auto no-repeat, url('#{$images-path}gallery-bg-bottom.png') right bottom / auto no-repeat, linear-gradient(#FFDBD6, #FFDBD6);
 	padding-bottom: 45px;
 	overflow: hidden;
+	
+	@include media('<=lg') {
+		background: url('#{$images-path}gallery-bg-top.png') left -300px top / auto no-repeat, url('#{$images-path}gallery-bg-bottom.png') right -300px bottom / auto no-repeat, linear-gradient(#FFDBD6, #FFDBD6);
+		// background-color: #FFDBD6;
+	}
+	
+	@include media('<=xs') {
+		// background: url('#{$images-path}gallery-bg-top.png') left -400px top -100px / auto no-repeat, url('#{$images-path}gallery-bg-bottom.png') right -400px bottom -100px / auto no-repeat, linear-gradient(#FFDBD6, #FFDBD6);
+	}
 
 	&__flyer-1 {
 		background: url('#{$images-path}flyer-9.png') center / contain no-repeat transparent;
@@ -11,6 +20,10 @@
 		position: absolute;
 		top: 90px;
 		right: -15px;
+
+		@include media('<=md') {
+			display: none;
+		};
 	}
 
 	&__flyer-2 {
@@ -59,29 +72,56 @@
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		margin-bottom: 75px;
+		
+		@include media('<=md') {
+			display: block;
+			margin-bottom: 60px;
+		};
+		
+		@include media('<=xxs') {
+			margin-bottom: 40px;
+		};
 	}
 
 	&__top-title {
 		grid-column: span 3;
+
+		@include media('<=md') {
+			margin-bottom: 30px;
+		};
+		
+		@include media('<=xxs') {
+			margin-bottom: 20px;
+		};
 	}
 	
 	&__top-text {
 		grid-column: 5 / span 6;
 		max-width: 620px;
 		line-height: 1.5;
-		margin: 0 auto;
+		// margin: 0 auto;
 		
 		@include media('<=xlg') {
 			grid-column: 6 / span 6;
 		}
+
+		@include media('<=xxs') {
+			font-size: 14px;
+		};
 	}
 
 	&__cards {
+		position: relative;
+		z-index: 1;
 		max-width: 840px;
 		margin: 0 auto;
 		display: grid;
 		grid-gap: 40px;
 		grid-template-columns: repeat(2, 1fr);
+		
+		@include media('<=sm') {
+			grid-gap: 20px;
+		};
 	}
 
 	&__card {

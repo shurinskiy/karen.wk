@@ -3,38 +3,221 @@
 	height: 720px;
 	overflow: hidden;
 	margin-top: -80px;
-	background: url('#{$images-path}hero-road.webp') bottom / auto no-repeat, url('#{$images-path}hero-clouds.webp') center top / auto no-repeat, url('#{$images-path}hero-landscape.png') center / auto no-repeat;
+	background: url('#{$images-path}hero-clouds.webp') center top / cover no-repeat, url('#{$images-path}hero-landscape.png') center bottom / 100% 100% no-repeat, linear-gradient(to top, #01CCFE, #01CCFE);
+	
+	@include media('<=xxlg') {
+		background: url('#{$images-path}hero-clouds.webp') center top / auto no-repeat, url('#{$images-path}hero-landscape.png') center bottom / auto no-repeat, linear-gradient(to top, #01CCFE, #01CCFE);
+	}
+	
+	@include media('<=md') {
+		background: url('#{$images-path}hero-clouds.webp') center top / auto no-repeat, url('#{$images-path}hero-landscape.png') center bottom / auto no-repeat, linear-gradient(to top, #01CCFE, #01CCFE);
+	}
+	
+	@include media('<=xxs') {
+		background: url('#{$images-path}hero-clouds.webp') center top / auto no-repeat, url('#{$images-path}hero-landscape.png')  left 30% bottom 34% / auto 60% no-repeat, linear-gradient(to top, #01CCFE, #01CCFE);
+		height: 810px;
+		max-height: 100vh;
+	}
 
 	&__inner {
 		position: relative;
 		height: 100%;
 	}
 
-	&__board {
+	&__road {
 		position: absolute;
-		top: 31%;
-		right: -6px;
-		color: #fff;
-		font-family: "BS", sans-serif;
-		font-style: italic;
-		max-width: 390px;
-	}
-	
-	&__board-main {
-		font-size: 52px;
-		text-align: center;
-		margin-bottom: 50px;
-	}
-	
-	&__board-bottom {
-		font-size: 32px;
-		display: flex;
-		justify-content: space-between;
+		max-width: none;
+		bottom: -70px;
+		right: calc(50% + 65px);
+		transform: translateX(50%);
+		width: 1600px;
+		
+		@include media('<=xxlg') {
+			width: 111vw;
+		}
+		
+		@include media('<=xlg') {
+			right: -15px;
+			transform: translateX(0);
+		}
+		
+		@include media('<=md') {
+			right: -5px;
+			bottom: 20px;
+		}
+		
+		@include media('<=xxs') {
+			width: 115vw;
+			right: 5px;
+			bottom: 90px;
+		}
 	}
 
-	&__board-part {
-		&:first-child {
-			margin-right: 30px;
+	&__comet {
+		width: 135px;
+		position: absolute;
+		top: 30px;
+		left: 220px;
+		
+		@include media('<=xxlg') {
+			top: auto;
+			bottom: calc(10vw + 435px);
+			left:  calc(15vw + 10px);
+			width: calc(4vw + 75px);
+		}
+		
+		@include media('<=xxs') {
+			transform: scaleX(-1);
+			width: calc(4vw + 105px);
+			left:  calc(15vw + 160px);
+			bottom: auto;
+			top: 35px;
+		}
+	}
+
+	&__bus {
+		width: 680px;
+		position: absolute;
+		bottom: -50px;
+		left: calc(50% - 30px);
+		transform: translateX(-50%);
+		
+		@include media('<=xxlg') {
+			width: 47vw;
+		}
+		
+		@include media('<=md') {
+			left: calc(50% - 50px);
+			bottom: 40px;
+		}
+		
+		@include media('<=xxs') {
+			left: calc(50% - 60px);
+			bottom: 95px;
+			width: 49vw;
+		}
+	}
+
+	&__bubbles {
+		width: 670px;
+		position: absolute;
+		top: 90px;
+		left: calc(50% - 80px);
+		transform: translateX(-50%);
+		
+		@include media('<=xxlg') {
+			top: auto;
+			width: 47vw;
+			bottom: calc(30vw - 60px);
+		}
+		
+		@include media('<=md') {
+			left: calc(50% - 50px);
+			bottom: calc(28vw + 40px);
+		}
+		
+		@include media('<=xxs') {
+			bottom: calc(28vw + 100px);
+			left: calc(50% - 70px);
+			width: 55vw;
+		}
+	}
+
+	&__bird {
+		width: 140px;
+		position: absolute;
+		top: 90px;
+		right: -15px;
+		
+		@include media('<=xxlg') {
+			width: calc(8vw + 30px);
+			top: auto;
+			right: 30px;
+			bottom: calc(40vw - 70px);
+		}
+		
+		@include media('<=md') {
+			bottom: calc(40vw + 20px);
+		}
+		
+		@include media('<=xxs') {
+			bottom: calc(40vw + 95px);
+		}
+	}
+
+	&__bird-bubble {
+		width: 185px;
+		position: absolute;
+		top: 10px;
+		right: -20px;
+		
+		@include media('<=xxlg') {
+			width: calc(10vw + 35px);
+			top: auto;
+			right: 25px;
+			bottom: calc(45vw - 20px);
+		}
+		
+		@include media('<=md') {
+			bottom: calc(45vw + 60px);
+		}
+		
+		@include media('<=xxs') {
+			bottom: calc(45vw + 130px);
+		}
+	}
+
+	&__board {
+		position: absolute;
+		right: 0px;
+		width: 380px;
+		bottom: 32%;
+		
+		@include media('<=xxlg') {
+			right: calc(5vw + 5px);
+			width: 25vw;
+			bottom: calc(24vw - 100px);
+		}
+		
+		@include media('<=md') {
+			bottom: calc(23vw + 10px);
+		}
+		
+		@include media('<=xxs') {
+			right: calc(5vw + 15px);
+			bottom: calc(23vw + 85px);
+		}
+	}
+
+	&__board-mobile {
+		display: none;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: calc(100% - 110px);
+		max-width: 245px;
+		top: 235px;
+		
+		@include media('<=xxs') {
+			display: block;
+		}
+		
+		@include media('<=xxxs') {
+			top: 228px;
+		}
+	}
+
+	&__cloud-mobile {
+		display: none;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: calc(100% - 40px);
+		max-width: 325px;
+		top: 195px;
+		
+		@include media('<=xxs') {
+			display: block;
 		}
 	}
 
@@ -51,7 +234,21 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		@include media('<=md') {
+			bottom: 0;
+			left: 0;
+			transform: none;
+			width: 100%;
+			border-radius: 0;
+			min-height: 100px;
+		}
 		
+		@include media('<=xs') {
+			min-height: 90px;
+			padding: 20px;
+		}
+	
 		&::before {
 			display: block;
 			content: '';
@@ -61,7 +258,32 @@
 			width: 240px;
 			height: 210px;
 			align-self: flex-end;
-			background: url('#{$images-path}hero-chiwawa.png') left bottom / auto no-repeat transparent;
+			background: url('#{$images-path}hero-chiwawa.png') left bottom / contain no-repeat transparent;
+			
+			@include media('<=lg') {
+				width: 200px;
+				height: 175px;
+			}
+			
+			@include media('<=md') {
+				left: 20px;
+			}
+			
+			@include media('<=xs') {
+				width: 170px;
+				height: 150px;
+			}
+			
+			@include media('<=xxs') {
+				width: 140px;
+				height: 120px;
+			}
+			
+			@include media('<=xxxs') {
+				left: 10px;
+				width: 125px;
+				height: 105px;
+			}
 		}
 	}
 
@@ -71,6 +293,29 @@
 		color: #fff;
 		font-style: italic;
 		margin-left: 330px;
+		
+		@include media('<=lg') {
+			margin-left: 280px;
+		}
+		
+		@include media('<=md') {
+			margin-left: 240px;
+		}
+		
+		@include media('<=xs') {
+			font-size: 20px;
+			margin-left: 200px;
+		}
+		
+		@include media('<=xxs') {
+			font-size: 16px;
+			margin-left: 170px;
+		}
+		
+		@include media('<=xxxs') {
+			font-size: 15px;
+			margin-left: 140px;
+		}
 
 		span {
 			color: #F83821;
@@ -92,56 +337,29 @@
 		text-transform: uppercase;
 		font-size: 18px;
 		white-space: nowrap;
-	}
-
-	&__plane {
-		width: 270px;
-		height: 185px;
-		background: url('#{$images-path}hero-plane.png') center / contain no-repeat transparent;
-		position: absolute;
-		top: 15px;
-		left: 55px;
-	}
-
-	&__bus {
-		width: 680px;
-		height: 460px;
-		background: url('#{$images-path}hero-bus.png') center / contain no-repeat transparent;
-		position: absolute;
-		bottom: -50px;
-		left: calc(50% - 30px);
-		transform: translateX(-50%);
-	}
-
-	&__bubbles {
-		width: 700px;
-		height: 260px;
-		background: url('#{$images-path}hero-bubbles.png') center / contain no-repeat transparent;
-		position: absolute;
-		top: 90px;
-		left: calc(50% - 80px);
-		transform: translateX(-50%);
-	}
-
-	&__bird {
-		width: 140px;
-		height: 120px;
-		background: url('#{$images-path}hero-bird.png') center / contain no-repeat transparent;
-		position: absolute;
-		top: 80px;
-		right: -10px
-	}
-
-	&__bird-bubble {
-		width: 185px;
-		height: 85px;
-		background: url('#{$images-path}hero-bird-bubble.png') center / contain no-repeat transparent;
-		position: absolute;
-		top: 10px;
-		right: -20px;
-
+		
 		@include media('<=md') {
-			display: none;
+			height: 28px;
+			width: 56px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, -35%);
+			padding: 0;
+			border-radius: 0;
+			background: url('#{$images-path}hero-panel-arr.svg') center / contain no-repeat transparent;
+
+			span { display: none; }
+		}
+		
+		@include media('<=xs') {
+			height: 23px;
+			width: 40px;
+		}
+		
+		@include media('<=xxxs') {
+			height: 20px;
+			width: 35px;
 		}
 	}
 }

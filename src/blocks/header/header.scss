@@ -11,6 +11,10 @@
 		@include media('<=md') {
 			padding-right: 20px;
 		}
+
+		@include media('<=xxs') {
+			padding-top: 40px;
+		}
 	}
 
 	&__logo {

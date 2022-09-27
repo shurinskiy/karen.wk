@@ -53,9 +53,7 @@
 	"dependencies": {
 		"jquery": "^3.6.0"
 	},
-	"externalJs": {
-		"jquery": "dist/jquery.min.js"
-	},
+	"externalJs": {},
 	"ftp": {
 		"host": "",
 		"user": "",

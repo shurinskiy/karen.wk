@@ -3,7 +3,7 @@ import { roughAccordion } from "../../js/lib";
 (() => {
 
 	roughAccordion(document.querySelectorAll('.roadmap__card'), { 
-		events: 'click, mouseenter',
+		events: 'touchstart, click',
 		cls: 'active',
 	});
 

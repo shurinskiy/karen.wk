@@ -6,10 +6,20 @@
 		position: absolute;
 		z-index: 1;
 		width: 450px;
-		height: 280px;
-		background: url('#{$images-path}roadmap-blaster.png') center / contain no-repeat transparent;
 		top: 265px;
 		right: -100px;
+		
+		@include media('<=sm') {
+			width: 410px;
+			right: -50px;
+			top: 85px;
+		}
+		
+		@include media('<=xxs') {
+			width: 350px;
+			right: -30px;
+			top: 60px;
+		}
 	}
 
 	&__inner {
@@ -17,16 +27,46 @@
 		padding-bottom: 140px;
 		position: relative;
 		z-index: 2;
+		
+		@include media('<=lg') {
+			padding-bottom: 170px;
+		}
+		
+		@include media('<=sm') {
+			padding-bottom: 190px;
+			padding-top: 320px;
+		}
+		
+		@include media('<=xs') {
+			padding-bottom: 140px;
+		}
 	}
 
 	&__top {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		margin-bottom: 73px;
+		
+		@include media('<=md') {
+			display: block;
+			margin-bottom: 60px;
+		};
+		
+		@include media('<=xxs') {
+			margin-bottom: 40px;
+		};
 	}
 
 	&__top-title {
 		grid-column: span 3;
+
+		@include media('<=md') {
+			margin-bottom: 30px;
+		};
+		
+		@include media('<=xxs') {
+			margin-bottom: 20px;
+		};
 	}
 	
 	&__top-text {
@@ -38,12 +78,20 @@
 		@include media('<=xlg') {
 			grid-column: 6 / span 6;
 		}
+
+		@include media('<=xxs') {
+			font-size: 14px;
+		};
 	}
 
 	&__cards {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 		grid-gap: 0 40px;
+
+		@include media('<=sm') {
+			display: block;
+		}
 	}
 
 	&__card {
@@ -71,30 +119,83 @@
 				transform: scale(1.0);
 			}
 		}
+
+		@include media('>sm') {
+
+			&:not(:first-child) {
+				margin-top: -191px;
+			}
+		
+			&.active {
+				animation: fadein 0.2s linear;
+				animation-fill-mode: forwards;
+			}
+		}
+
+		@include media('<=sm') {
+			padding: 26px 70px 20px;
+
+			&:not(:first-child) {
+				margin-top: -40px;
+			}
+		
+			&.active {
+				#{$self}__card-points {
+					max-height: 100vh;
+				}
+			}
+		}
+		
+		@include media('<=xxs') {
+			padding: 25px 40px;
+		}
 		
 		&:nth-child(1) {
 			grid-column: 1 / span 5;
+			
+			@include media('<=lg') {
+				grid-column: 2 / span 7;
+			}
+			
+			@include media('<=md') {
+				grid-column: 1 / span 8;
+			}
 		}
 		
 		&:nth-child(2) {
 			grid-column: 3 / span 5;
+			
+			@include media('<=lg') {
+				grid-column: 3 / span 7;
+			}
+			
+			@include media('<=md') {
+				grid-column: 2 / span 8;
+			}
 		}
 		
 		&:nth-child(3) {
 			grid-column: 6 / span 5;
+			
+			@include media('<=lg') {
+				grid-column: 4 / span 7;
+			}
+			
+			@include media('<=md') {
+				grid-column: 3 / span 8;
+			}
 		}
 		
 		&:nth-child(4) {
 			grid-column: 8 / span 5;
-		}
-
-		&:not(:first-child) {
-			margin-top: -191px;
-		}
-
-		&.active {
-			animation: fadein 0.2s linear;
-			animation-fill-mode: forwards;
+			
+			@include media('<=lg') {
+				grid-column: 5 / span 7;
+			}
+			
+			@include media('<=md') {
+				grid-column: 4 / span 8;
+			}
 		}
 	}
 
@@ -116,6 +217,23 @@
 	&__card-points {
 		padding-left: 25px;
 		line-height: 1.5;
+
+		@include media('<=sm') {
+			transition: max-height 0.5s;
+			max-height: 0;
+			overflow: hidden;
+
+			&::after {
+				display: block;
+				content: '';
+				width: 100%;
+				height: 40px;
+			}
+		}
+		
+		@include media('<=xxs') {
+			font-size: 14px;			
+		}
 		
 		li {
 			list-style: disc;

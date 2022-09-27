@@ -1,18 +1,142 @@
 .info {
 	$self: &;
 	overflow: hidden;
+	// position: relative;
+	background: url('#{$images-path}info-glow.png') top 370px left -150px / auto no-repeat, url('#{$images-path}info-glow.png') bottom 200px right -300px / 750px auto no-repeat;
+	
+	@include media('<=xxlg') {
+		background: url('#{$images-path}info-glow.png') top 270px left -270px / auto no-repeat, url('#{$images-path}info-glow.png') bottom 200px right -300px / 750px auto no-repeat;
+	}
+	
+	@include media('<=sm') {
+		background: url('#{$images-path}info-glow.png') top 270px left -350px / auto no-repeat, url('#{$images-path}info-glow.png') bottom 200px right -300px / 750px auto no-repeat;
+	}
+	
+	@include media('<=xxs') {
+		background: url('#{$images-path}info-glow.png') top 200px right -500px / auto no-repeat, url('#{$images-path}info-glow.png') bottom 200px right -300px / 750px auto no-repeat;
+	}
+	
+	/* &::before {
+		position: absolute;
+		left: -40%;
+		top: -300px;
+		display: block;
+		content: '';
+		width: 980px;
+		height: 1080px;
+		background: url('#{$images-path}info-glow.png') center / contain no-repeat;
+	} */
+	
+	&__partners {
+		position: relative;
+		min-height: 670px;
+		
+		@include media('<=lg') {
+			min-height: 580px;
+		}
+		
+		@include media('<=xs') {
+			min-height: 510px;
+		}
+		
+		@include media('<=xxs') {
+			min-height: 460px;
+		}
+	}
+
+	&__title {
+
+		&_partners {
+			display: flex;
+			flex-wrap: wrap;
+			max-width: 840px;
+			margin: 0 auto 100px;
+	
+			span:nth-child(2) {
+				margin: 0 30px;
+				color: #F83821;
+				
+				@include media('<=xxs') {
+					margin: 0 15px;
+				}
+			}
+	
+			span:nth-child(3) {
+				margin-left: auto;
+			}
+		}
+
+		&_faq {
+			text-align: center;
+			margin-bottom: 100px;
+			
+			@include media('<=xs') {
+				text-align: left;
+				margin-bottom: 60px;
+			}
+			
+			@include media('<=xxs') {
+
+			}
+		}
+	}
+
+	&__type {
+		position: absolute;
+		top: auto;
+		left: 50%;
+		height: 90px;
+		border: 2px solid black;
+		width: 2000px;
+		z-index: 1;
+		background-position: center;
+		background-size: auto;
+		background-repeat: repeat-x;
+		transform-origin: 0;
+		
+		@include media('<=xs') {
+			height: 50px;
+			background-size: 110px auto;
+		}
+
+		&_1 {
+			background-color: #FDD30F;
+			background-image: url('#{$images-path}partners-type-1.png');
+			transform: rotate(16deg) translateX(-50%);
+		}
+		
+		&_2 {
+			background-color: #F83821;
+			background-image: url('#{$images-path}partners-type-2.png');
+			transform: rotate(-6deg) translateX(-50%);
+			box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.3);
+		}
+	}
 	
 	&__binoculars {
 		position: absolute;
 		z-index: 1;
 		width: 370px;
-		height: 250px;
-		background: url('#{$images-path}info-binoculars.png') center / contain no-repeat transparent;
-		top: 20px;
+		top: 210px;
 		left: -100px;
+		
+		@include media('<=sm') {
+			width: 300px;
+		}
+		
+		@include media('<=xs') {
+			position: static;
+			margin-bottom: 50px;
+		}
+		
+		@include media('<=xxs') {
+			margin-left: -50px;
+			margin-bottom: 50px;
+			width: 250px;
+		}
 	}
 	
-	&__inner {
+	&__feed {
 		position: relative;
 		padding-bottom: 150px;
 	}
@@ -21,6 +145,10 @@
 		display: grid;
 		grid-gap: 40px;
 		grid-template-columns: repeat(12, 1fr);
+
+		@include media('<=xs') {
+			display: block;
+		}
 	}
 
 	&__item {
@@ -31,6 +159,16 @@
 		background-color: #FFFEE4;
 		border: 2px solid black;
 		border-bottom-width: 7px;
+		
+		@include media('<=xs') {
+			margin-bottom: 30px;
+		}
+		
+		@include media('<=xxs') {
+			font-size: 14px;
+			margin-bottom: 20px;
+			padding: 35px 35px 25px;
+		}
 	}
 
 	&__subtitle {

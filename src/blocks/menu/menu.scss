@@ -20,10 +20,15 @@
 		padding: 40px 20px 30px;
 		position: absolute;
 		z-index: 10;
-		top: 20px;
 		right: 20px;
+		top: 20px;
 		width: calc(100% - 40px);
 		max-width: 250px;
+		
+		@include media('<=xxs') {
+			right: 10px;
+			top: 30px;
+		}
 
 		&.opened {
 			display: flex;

@@ -4,7 +4,7 @@
 	
 	&__inner {
 		position: relative;
-		min-height: 760px;
+		min-height: 670px;
 	}
 
 	&__title {
@@ -16,6 +16,10 @@
 		span:nth-child(2) {
 			margin: 0 30px;
 			color: #F83821;
+			
+			@include media('<=xxs') {
+				margin: 0 15px;
+			}
 		}
 
 		span:nth-child(3) {
@@ -35,6 +39,11 @@
 		background-size: auto;
 		background-repeat: repeat-x;
 		transform-origin: 0;
+		
+		@include media('<=xs') {
+			height: 50px;
+			background-size: 110px auto;
+		}
 
 		&_1 {
 			background-color: #FDD30F;
