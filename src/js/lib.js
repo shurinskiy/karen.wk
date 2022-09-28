@@ -117,6 +117,29 @@ export const slideToggle = (el, duration, cb) => {
 
 /* ======== Готовые решения ======== */
 
+export const menuToggle = (menu, toggles, cls = 'opened') => {
+
+	if(!toggles || !menu) return;
+
+	toggles.forEach(item => {
+		item.addEventListener('click', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			menu.classList.toggle(`${cls}`);
+		});
+	});
+
+	['click','touchstart'].forEach(event => {
+		document.addEventListener(event, function(e) {
+			if(menu.classList.contains(`${cls}`) && !e.target.closest(`.${menu.className.split(' ')[0]}`)) {
+				e.preventDefault();
+				menu.classList.toggle(`${cls}`);
+			}
+		});
+	});
+}
+
+
 /* 
 * Упрощенный аналог wow.js. Отслеживает появление элемента снизу
 * в области просмотра браузера. Добавляет и (опционально)
