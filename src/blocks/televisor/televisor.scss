@@ -1,7 +1,10 @@
 .televisor {
 	background: url('#{$images-path}televisor-bg.png') bottom left -200px / auto no-repeat, url('#{$images-path}televisor-bg.png') bottom 120px right 15% / 200px auto no-repeat, url('#{$images-path}televisor-bg.png') top right -150px / 350px auto no-repeat, linear-gradient(to top, #FDDF4A 0%, #FDD620 50%, #FDDF4A 100%);
-	padding: 100px 0;
-	clip-path: url('#{$images-path}partners-type-1.svg');
+	// padding: 100px 0;
+	
+	@include media('<=xs') {
+		background: url('#{$images-path}televisor-bg.png') center left -120px / 300px no-repeat, url('#{$images-path}televisor-bg.png') bottom right 10% / 160px auto no-repeat, url('#{$images-path}televisor-bg.png') top right -150px / 350px auto no-repeat, linear-gradient(to top, #FDDF4A 0%, #FDD620 50%, #FDDF4A 100%);
+	}
 
 	&__inner {
 		@include media('<=xxs') {

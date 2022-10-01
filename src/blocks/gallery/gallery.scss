@@ -1,16 +1,20 @@
 .gallery {
 	$self: &;
 	background: url('#{$images-path}gallery-bg-top.png') left top / auto no-repeat, url('#{$images-path}gallery-bg-bottom.png') right bottom / auto no-repeat, linear-gradient(#FFDBD6, #FFDBD6);
-	padding-bottom: 45px;
+	padding: 200px 0;
 	overflow: hidden;
 	
 	@include media('<=lg') {
 		background: url('#{$images-path}gallery-bg-top.png') left -300px top / auto no-repeat, url('#{$images-path}gallery-bg-bottom.png') right -300px bottom / auto no-repeat, linear-gradient(#FFDBD6, #FFDBD6);
-		// background-color: #FFDBD6;
+		padding: 160px 0 180px;
 	}
 	
-	@include media('<=xs') {
-		// background: url('#{$images-path}gallery-bg-top.png') left -400px top -100px / auto no-repeat, url('#{$images-path}gallery-bg-bottom.png') right -400px bottom -100px / auto no-repeat, linear-gradient(#FFDBD6, #FFDBD6);
+	@include media('<=md') {
+		
+	}
+
+	@include media('<=xxs') {
+		padding: 100px 0 130px;
 	}
 
 	&__flyer-1 {
@@ -64,8 +68,6 @@
 
 	&__inner {
 		position: relative;
-		padding-bottom: 90px;
-		padding-top: 70px;
 	}
 
 	&__top {

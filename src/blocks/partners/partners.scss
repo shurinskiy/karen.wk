@@ -4,14 +4,22 @@
 	
 	&__inner {
 		position: relative;
-		min-height: 670px;
+		min-height: 720px;
+		
+		@include media('<=md') {
+			min-height: 670px;
+		}
+		
+		@include media('<=xxs') {
+			min-height: 560px;
+		}
 	}
 
 	&__title {
 		display: flex;
 		flex-wrap: wrap;
 		max-width: 840px;
-		margin: 0 auto 100px;
+		margin: 0 auto 160px;
 
 		span:nth-child(2) {
 			margin: 0 30px;

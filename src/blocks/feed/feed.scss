@@ -2,17 +2,26 @@
 	$self: &;
 	overflow: hidden;
 	
-	@include media('<=xxs') {
-		padding-bottom: 140px;
-	}
-	
 	&_one {
 		background: url('#{$images-path}feed-bg-top.png') left 20px top -120px / auto no-repeat, linear-gradient(to top, #FDDF4A 0%, #fffee4 100%);
+		padding: 250px 0 80px;
+		
+		@include media('<=xs') {
+			padding: 180px 0 60px;
+		}
 	}
 	
 	&_two {
-		padding-bottom: 45px;
 		background: url('#{$images-path}feed-bg-bottom.png') right -320px top / auto no-repeat, linear-gradient(to bottom, #FDDF4A 0%, #fffee4 100%);
+		padding: 200px 0 120px;
+		
+		@include media('<=xlg') {
+			
+		}
+		
+		@include media('<=xs') {
+			padding: 150px 0 120px;
+		}
 	}
 
 	&__flyer-1 {
@@ -21,11 +30,15 @@
 		top: 275px;
 		right: -125px;
 		
+		@include media('<=md') {
+			z-index: 5;
+			top: 195px;
+		}
+		
 		@include media('<=xs') {
-			top: 60px;
+			top: -65px;
 			right: -40px;
 			width: 110px;
-			z-index: 5;
 		}
 	}
 
@@ -35,9 +48,13 @@
 		top: 85px;
 		left: 30px;
 		
+		@include media('<=lg') {
+			top: -160px;
+		}
+		
 		@include media('<=xs') {
 			z-index: 5;
-			top: calc(40vw + 100px);
+			top: -70px;
 			left: 20px;
 			width: 80px;
 		}
@@ -49,10 +66,15 @@
 		left: 130px;
 		bottom: 0;
 		
+		@include media('<=md') {
+			left: 50px;
+			bottom: -90px;
+		}
+		
 		@include media('<=xs') {
 			z-index: 5;
 			width: 40px;
-			top: 710px;
+			top: 650px;
 			left: 0;
 		}
 	}
@@ -63,18 +85,22 @@
 		width: 50px;
 		right: 45px;
 		
+		@include media('<=md') {
+			bottom: 60px;
+		}
+		
 		@include media('<=xs') {
 			z-index: 5;
 			width: 35px;
 			right: 30px;
-			top: 370px;
+			top: 310px;
 		}
 	}
 
 	&__flyer-5 {
 		width: 100px;
 		position: absolute;
-		top: 0;
+		top: -100px;
 		right: 100px;
 		
 		@include media('<=xs') {
@@ -82,6 +108,10 @@
 			width: 60px;
 			top: 0;
 			right: 50px;
+		}
+		
+		@include media('<=xxs') {
+			top: -80px;
 		}
 	}
 
@@ -91,6 +121,10 @@
 		width: 90px;
 		left: -5px;
 		
+		@include media('<=md') {
+			width: 75px;
+		}
+		
 		@include media('<=xs') {
 			z-index: 5;
 			bottom: 290px;
@@ -99,7 +133,8 @@
 		}
 		
 		@include media('<=xxs') {
-			bottom: 530px;
+			top: auto;
+			bottom: 500px;
 		}
 	}
 
@@ -129,6 +164,12 @@
 			left: 100px;
 		}
 		
+		@include media('<=md') {
+			bottom: -130px;
+			width: 80px;
+			left: 75px;
+		}
+		
 		@include media('<=xs') {
 			z-index: 5;
 			bottom: -70px;
@@ -146,11 +187,14 @@
 	}
 
 	&__cards {
-		padding-top: 135px;
 		display: flex;
 		justify-content: space-between;
 		max-width: 1095px;
 		margin: 0 auto 35px;
+		
+		@include media('<=lg') {
+			margin: 0 -20px 35px;
+		}
 		
 		@include media('<=xs') {
 			margin: 0 -100px 35px;

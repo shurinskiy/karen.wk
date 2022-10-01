@@ -1,14 +1,22 @@
 .faq {
 	$self: &;
 	overflow: hidden;
-	padding-top: 200px;
-	margin-top: -200px;
+	padding: 250px 0 150px;
+	margin-top: -150px;
 	background: url('#{$images-path}info-glow.png') top 0 left -150px / auto no-repeat, url('#{$images-path}info-glow.png') bottom 200px right -300px / 750px auto no-repeat;
 	
 	@include media('<=xxlg') {
-		background: url('#{$images-path}info-glow.png') top 270px left -270px / auto no-repeat, url('#{$images-path}info-glow.png') bottom 200px right -300px / 750px auto no-repeat;
+		background: url('#{$images-path}info-glow.png') top 0 left -270px / auto no-repeat, url('#{$images-path}info-glow.png') bottom 200px right -300px / 750px auto no-repeat;
 	}
 	
+	@include media('<=lg') {
+		padding: 180px 0 150px;
+	}
+	
+	@include media('<=md') {
+
+	}
+
 	@include media('<=sm') {
 		background: url('#{$images-path}info-glow.png') top 270px left -350px / auto no-repeat, url('#{$images-path}info-glow.png') bottom 200px right -300px / 750px auto no-repeat;
 	}
@@ -53,7 +61,6 @@
 	
 	&__inner {
 		position: relative;
-		padding-bottom: 150px;
 	}
 
 	&__items {
