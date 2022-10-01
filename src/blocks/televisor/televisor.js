@@ -7,6 +7,7 @@
 		if (player.src) {
 			player.contentWindow.postMessage(JSON.stringify({"event":"command", "func":`${func}`}), '*');
 			player.classList.toggle('paused');
+			console.log(player.contentWindow);
 		}
 
 		if (!player.src && e.target.classList.contains('televisor__play')) {

@@ -31,14 +31,17 @@
 		position: absolute;
 		top: auto;
 		left: 50%;
-		height: 90px;
-		border: 2px solid black;
-		width: 2000px;
 		z-index: 1;
-		background-position: center;
-		background-size: auto;
-		background-repeat: repeat-x;
+		height: 90px;
+		width: 2000px;
+		border: 2px solid black;
 		transform-origin: 0;
+		// background-position: center;
+		// background-size: auto;
+		// background-repeat: repeat-x;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		
 		@include media('<=xs') {
 			height: 50px;
@@ -47,15 +50,24 @@
 
 		&_1 {
 			background-color: #FDD30F;
-			background-image: url('#{$images-path}partners-type-1.png');
+			// background-image: url('#{$images-path}partners-type-1.png');
 			transform: rotate(16deg) translateX(-50%);
 		}
 		
 		&_2 {
 			background-color: #F83821;
-			background-image: url('#{$images-path}partners-type-2.png');
+			// background-image: url('#{$images-path}partners-type-2.png');
 			transform: rotate(-6deg) translateX(-50%);
 			box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.3);
+		}
+
+		img {
+			display: block;
+			margin: 0 40px;
+		
+			@include media('<=xs') {
+				max-height: 65%;
+			}
 		}
 	}
 }
