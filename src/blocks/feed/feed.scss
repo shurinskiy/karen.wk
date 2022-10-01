@@ -218,26 +218,7 @@
 	}
 
 	&__button {
-		box-sizing: border-box;
-		height: 67px;
-		padding: 14px 10px 10px 10px;
-		width: 100%;
-		max-width: 215px;
 		margin: 0 10px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		color: #000;
-		text-decoration: none;
-		text-transform: uppercase;
-		font-family: "BS", sans-serif;
-		font-size: 18px;
-		line-height: 1.0;
-		background-color: #FFFEE4;
-		border-radius: 100px;
-		border: 2px solid black;
-		border-bottom-width: 7px;
 
 		@include media('<=xxs') {
 			margin: 0 auto 25px;

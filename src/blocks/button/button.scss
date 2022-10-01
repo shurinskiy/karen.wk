@@ -1,0 +1,21 @@
+.button {
+	$self: &;
+	@extend %reset-button;
+	height: 67px;
+	width: 100%;
+	max-width: 215px;
+	padding: 14px 10px 10px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #000;
+	text-transform: uppercase;
+	font-family: "BS", sans-serif;
+	font-size: 18px;
+	line-height: 1.0;
+	background-color: #FFFEE4;
+	border-radius: 100px;
+	border: 2px solid black;
+	border-bottom-width: 7px;
+}

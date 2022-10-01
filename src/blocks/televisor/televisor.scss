@@ -1,5 +1,5 @@
 .televisor {
-	background: url('#{$images-path}televisor-bg.png') bottom left -200px / auto no-repeat, linear-gradient(to top, #FDDF4A 0%, #FDD620 50%, #FDDF4A 100%);
+	background: url('#{$images-path}televisor-bg.png') bottom left -200px / auto no-repeat, url('#{$images-path}televisor-bg.png') bottom 120px right 15% / 200px auto no-repeat, url('#{$images-path}televisor-bg.png') top right -150px / 350px auto no-repeat, linear-gradient(to top, #FDDF4A 0%, #FDD620 50%, #FDDF4A 100%);
 	padding: 100px 0;
 	clip-path: url('#{$images-path}partners-type-1.svg');
 
@@ -13,7 +13,7 @@
 		position: relative;
 		@include aspect-ratio(1.7, 1);
 		min-height: 300px;
-		
+		margin-bottom: 20px;
 
 		&::after {
 			position: absolute;
@@ -128,6 +128,20 @@
 
 		&:hover {
 			background-color: rgba(150, 150, 150, 0.3);
+		}
+	}
+
+	&__button {
+		margin: 0 auto;
+		max-width: 205px;
+
+		&::after {
+			display: block;
+			content: '';
+			width: 34px;
+			height: 27px;
+			background: url('#{$images-path}social-twt-black.svg') center / contain no-repeat transparent;
+			margin-left: 10px;
 		}
 	}
 }
