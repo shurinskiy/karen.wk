@@ -1,11 +1,18 @@
 .feed {
 	$self: &;
-	background: url('#{$images-path}feed-bg-top.png') left 20px top -120px / auto no-repeat, url('#{$images-path}feed-bg-bottom.png') right -320px bottom 120px / auto no-repeat, linear-gradient(to top, #fdd311 0%, #fffee4 100%);
-	padding-bottom: 45px;
 	overflow: hidden;
 	
 	@include media('<=xxs') {
 		padding-bottom: 140px;
+	}
+	
+	&_one {
+		background: url('#{$images-path}feed-bg-top.png') left 20px top -120px / auto no-repeat, linear-gradient(to top, #FDDF4A 0%, #fffee4 100%);
+	}
+	
+	&_two {
+		padding-bottom: 45px;
+		background: url('#{$images-path}feed-bg-bottom.png') right -320px top / auto no-repeat, linear-gradient(to bottom, #FDDF4A 0%, #fffee4 100%);
 	}
 
 	&__flyer-1 {
@@ -39,8 +46,8 @@
 	&__flyer-3 {
 		position: absolute;
 		width: 65px;
-		top: 750px;
 		left: 130px;
+		bottom: 0;
 		
 		@include media('<=xs') {
 			z-index: 5;
@@ -52,9 +59,9 @@
 
 	&__flyer-4 {
 		position: absolute;
+		bottom: 120px;
 		width: 50px;
 		right: 45px;
-		top: 600px;
 		
 		@include media('<=xs') {
 			z-index: 5;
@@ -67,20 +74,20 @@
 	&__flyer-5 {
 		width: 100px;
 		position: absolute;
-		top: 905px;
-		right: 335px;
+		top: 0;
+		right: 100px;
 		
 		@include media('<=xs') {
 			z-index: 5;
 			width: 60px;
-			top: 905px;
+			top: 0;
 			right: 50px;
 		}
 	}
 
 	&__flyer-6 {
 		position: absolute;
-		bottom: 415px;
+		top: 290px;
 		width: 90px;
 		left: -5px;
 		
@@ -114,7 +121,7 @@
 		position: absolute;
 		bottom: -40px;
 		width: 110px;
-		left: 207px;
+		left: 70px;
 		
 		@include media('<=lg') {
 			bottom: -80px;

@@ -1,0 +1,133 @@
+.televisor {
+	background: url('#{$images-path}televisor-bg.png') bottom left -200px / auto no-repeat, linear-gradient(to top, #FDDF4A 0%, #FDD620 50%, #FDDF4A 100%);
+	padding: 100px 0;
+	clip-path: url('#{$images-path}partners-type-1.svg');
+
+	&__inner {
+		@include media('<=xxs') {
+			padding: 0;
+		}
+	}
+
+	&__video {
+		position: relative;
+		@include aspect-ratio(1.7, 1);
+		min-height: 300px;
+		
+
+		&::after {
+			position: absolute;
+			display: block;
+			content: '';
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: url('#{$images-path}televisor-mask.png') center / 100% 100% no-repeat transparent;
+			z-index: 3;
+			// opacity: 0.5;
+			// display: none;
+		}
+		
+		@include media('<=md') {
+			margin-bottom: 40px;
+		}
+		
+		@include media('<=xxs') {
+			border-radius: 10px;
+			min-height: 217px;
+		}
+		
+		@include media('<=xxxs') {
+			border-radius: 8px;
+			min-height: 160px;
+		}
+	}
+
+	&__frame {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-54%, -47%);
+		width: 74%;
+		height: 72%;
+		z-index: 2;
+		border-radius: 90px;
+		overflow: hidden;
+		box-sizing: border-box;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		
+		@include media('<=sm') {
+			border-radius: 50px;
+		}
+		
+		@include media('<=xxs') {
+			border-radius: 30px;
+		}
+
+		iframe {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__play {
+		@extend %reset-button;
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 4;
+		transform: translate(-50%, -40%);
+		width: 110px;
+		height: 110px;
+		border-radius: 50%;
+		border: 1px solid #fff;		
+		background-color: rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(5px);
+		transition: background-color 0.3s ease;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	
+		&::before {
+			content: '';
+			width: 0; 
+			height: 0;
+			border-top: 18px solid transparent;
+			border-left: 25px solid #fff;
+			border-bottom: 18px solid transparent;
+			margin-left: 8px;
+		}
+		
+		@include media('<=sm') {
+			width: 80px;
+			height: 80px;
+			
+			&::before {
+				border-top-width: 14px;
+				border-bottom-width: 14px;
+				border-left-width: 20px;
+			}
+		}
+		
+		@include media('<=xs') {
+			width: 60px;
+			height: 60px;
+
+			&::before {
+				border-top-width: 12px;
+				border-bottom-width: 12px;
+				border-left-width: 17px;
+				margin-left: 7px;
+			}
+		}
+
+		&:hover {
+			background-color: rgba(150, 150, 150, 0.3);
+		}
+	}
+}

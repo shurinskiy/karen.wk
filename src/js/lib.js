@@ -117,6 +117,10 @@ export const slideToggle = (el, duration, cb) => {
 
 /* ======== Готовые решения ======== */
 
+/* 
+* Переключатель класса для мобильного меню
+*/
+
 export const menuToggle = (menu, toggles, cls = 'opened') => {
 
 	if(!toggles || !menu) return;
@@ -133,7 +137,7 @@ export const menuToggle = (menu, toggles, cls = 'opened') => {
 		document.addEventListener(event, function(e) {
 			if(menu.classList.contains(`${cls}`) && !e.target.closest(`.${menu.className.split(' ')[0]}`)) {
 				e.preventDefault();
-				menu.classList.toggle(`${cls}`);
+				menu.classList.remove(`${cls}`);
 			}
 		});
 	});
